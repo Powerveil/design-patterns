@@ -1,4 +1,4 @@
-package com.power.principles.demo4;
+package com.power.principles.demo4.before;
 
 /**
  * @ClassName PowerSafetyDoor
