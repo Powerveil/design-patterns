@@ -1,0 +1,5 @@
+hungry  饿汉式
+idler   懒汉式
+enums   枚举方式：饿汉式
+destroy 破坏单例模式
+jdk     jdk中的单例模式
