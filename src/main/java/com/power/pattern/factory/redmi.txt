@@ -1,5 +1,6 @@
 before
-simple 简单工厂(不是23中设计模式，习惯的写法)
+simple           简单工厂(不是23中设计模式，习惯的写法)
 - simple_factory
 - static_factory 静态工厂(简单工厂的优化)
-
+factory_method   抽象方法模式
+abstract_factory 抽象工厂模式
