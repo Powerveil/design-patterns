@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName CoffeeFactory
@@ -28,14 +29,16 @@ public class CoffeeFactory {
         try {
             p.load(ls);
             // 从p集合中获取全类名并创建对象
-            Set<Object> keys = p.keySet();
-            for (Object key : keys) {
-                String className = p.getProperty((String) key);
+            Set<String> keys = p.keySet().stream()
+                    .map(String.class::cast)
+                    .collect(Collectors.toSet());
+            for (String key : keys) {
+                String className = p.getProperty(key);
                 // 通过反射计数创建对象
                 Class<?> aClass = Class.forName(className);
                 Coffee coffee = (Coffee) aClass.newInstance();
                 // 将名称和对象存储到容器中
-                map.put((String) key, coffee);
+                map.put(key, coffee);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
