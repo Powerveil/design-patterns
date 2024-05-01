@@ -27,6 +27,11 @@ public class Singleton {
                 return InSTANCE;
             }
         }
+//        while (true) {
+//            if (InSTANCE != null) {
+//                return InSTANCE;
+//            }
+//        }
         return InSTANCE;
     }
 }
